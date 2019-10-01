@@ -23,7 +23,7 @@ def main():
     else:
         print("this is a user")
         current_script= os.path.realpath(__file__)
-        os.system('echo %s| sudo -S python %s' % (pass_sudo,current_script))
+        os.system('echo %s| sudo chmod -R 777 %s' % (pass_sudo,current_script))
 def isgroupreadable(filepath):
   st = os.stat(filepath)
   return bool(st.st_mode & stat.S_IRGRP)
